@@ -35,7 +35,7 @@ namespace Full_GRASP_And_SOLID.Library
                     $"usando '{step.Equipment.Description}' durante {step.Time}");
             }
         }
-        public void GetProductionCost()
+        public void GetProductionCost()   // este metodo funciona para devolver el costo total de la preparacion
         {
             double Total = 0;
             foreach (Step item in steps)
