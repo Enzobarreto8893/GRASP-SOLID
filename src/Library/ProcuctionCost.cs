@@ -16,7 +16,7 @@ namespace Full_GRASP_And_SOLID.Library
         public double CostoInsumos()
         {
             double costoInsumos = 0;
-            costoInsumos += this.Prep.Quantity * this.Prep.Input.UnitCost;
+            costoInsumos =  this.Prep.Input.UnitCost;
             return costoInsumos;
         }
         public double CostoEquipo()
@@ -31,11 +31,10 @@ namespace Full_GRASP_And_SOLID.Library
 
         public string CalCost()
         {
-            
             double subTotalEquipo = CostoEquipo();
             double subTotalMateriales = CostoInsumos();
             double costoFinal = subTotalEquipo+subTotalMateriales;
-            string costoFinalStr = $"Costo Equipo ${subTotalEquipo.ToString()} + Costo Materiales ${subTotalMateriales.ToString()} = Costo Final ${costoFinal.ToString()}";
+            string costoFinalStr = $"Preparar {this.Prep.Input.Description}: Costo Equipo ${subTotalEquipo.ToString()} + Costo Materiales ${subTotalMateriales.ToString()} = Costo ${costoFinal.ToString()}";
             return costoFinalStr;
         }
     }

@@ -37,11 +37,14 @@ namespace Full_GRASP_And_SOLID.Library
         }
         public void GetProductionCost()
         {
+            double Total = 0;
             foreach (Step item in steps)
             {
                 ProductionCost a =new ProductionCost(item);
                 Console.WriteLine(a.CalCost());
+                Total += a.CostoInsumos() + a.CostoEquipo();
             }
+            Console.WriteLine($"Costo Total de la prepararación es de ${Total}.");
              
         }
     }
