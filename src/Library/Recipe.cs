@@ -14,6 +14,7 @@ namespace Full_GRASP_And_SOLID.Library
         private ArrayList steps = new ArrayList();
 
         public Product FinalProduct { get; set; }
+        
 
         public void AddStep(Step step)
         {
@@ -33,6 +34,15 @@ namespace Full_GRASP_And_SOLID.Library
                 Console.WriteLine($"{step.Quantity} de '{step.Input.Description}' " +
                     $"usando '{step.Equipment.Description}' durante {step.Time}");
             }
+        }
+        public void GetProductionCost()
+        {
+            foreach (Step item in steps)
+            {
+                ProductionCost a =new ProductionCost(item);
+                Console.WriteLine(a.CalCost());
+            }
+             
         }
     }
 }
