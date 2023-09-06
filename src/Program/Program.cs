@@ -1,9 +1,4 @@
-﻿//-------------------------------------------------------------------------
-// <copyright file="Program.cs" company="Universidad Católica del Uruguay">
-// Copyright (c) Programación II. Derechos reservados.
-// </copyright>
-//-------------------------------------------------------------------------
-
+﻿
 using System;
 using System.Collections;
 using System.Linq;
@@ -20,7 +15,7 @@ namespace Full_GRASP_And_SOLID
         public static void Main(string[] args)
         {
             PopulateCatalogs();
-
+            
             Recipe recipe = new Recipe();
             recipe.FinalProduct = GetProduct("Café con leche");
             recipe.AddStep(new Step(GetProduct("Café"), 100, GetEquipment("Cafetera"), 120));
@@ -51,7 +46,7 @@ namespace Full_GRASP_And_SOLID
         {
             productCatalog.Add(new Product(description, unitCost));
         }
-
+        //
         private static void AddEquipmentToCatalog(string description, double hourlyCost)
         {
             equipmentCatalog.Add(new Equipment(description, hourlyCost));
@@ -61,7 +56,7 @@ namespace Full_GRASP_And_SOLID
         {
             return productCatalog[index] as Product;
         }
-
+        
         private static Equipment EquipmentAt(int index)
         {
             return equipmentCatalog[index] as Equipment;
